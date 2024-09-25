@@ -4,8 +4,9 @@ import pino from 'pino-http';
 import { env } from './utils/env.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 import { notFoundHandler } from './middlewares/notFoundHandler.js';
-// import cookieParser from 'cookie-parser';
 import eventsRouter from './routers/events.js';
+import participantsRouter from './routers/participants.js';
+
 const PORT = Number(env('PORT', 3000));
 
 //дозволені домени, з яких можна робити запити
@@ -39,8 +40,6 @@ export const setupServer = () => {
     }),
   );
 
-  // app.use(cookieParser());
-
   app.use(
     pino({
       transport: {
@@ -54,6 +53,8 @@ export const setupServer = () => {
   });
 
   app.use('/events', eventsRouter);
+
+  app.use('/participants', participantsRouter);
 
   app.use(notFoundHandler);
 
