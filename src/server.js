@@ -15,6 +15,7 @@ const allowedOrigins = [
   'http://localhost:3000',
 
   //деплой-продакшен
+  'https://events-app-delta-seven.vercel.app',
 ];
 
 export const setupServer = () => {
