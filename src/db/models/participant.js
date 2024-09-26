@@ -4,8 +4,8 @@ export const participantSchema = new Schema(
   {
     fullname: { type: String, required: true },
     email: { type: String, required: true },
-    birthdate: { type: String, required: true },
-    queston: {
+    birthDate: { type: String, required: true },
+    question: {
       type: String,
       required: true,
       enum: ['social', 'friends', 'myself'],

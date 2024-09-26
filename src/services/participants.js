@@ -5,3 +5,12 @@ export const getParticipants = async () => {
 
   return participants;
 };
+
+export const createParticipant = async (payload) => {
+  console.log('payload: ', payload);
+
+  const participant = await Participant.create(payload);
+  console.log('participant: ', participant);
+
+  return participant;
+};
